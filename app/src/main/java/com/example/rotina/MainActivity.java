@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btMinhaRotina, btNovaRotina;
+    Button btIMC, btRotina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,15 +18,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         carregaWidgets();
-        rotina();
+        imc();
     }
 
     private void carregaWidgets(){
-        btMinhaRotina = (Button)findViewById(R.id.btnIMC);
-        btNovaRotina = (Button)findViewById(R.id.btnRotina);
+        btIMC = (Button)findViewById(R.id.btnIMC);
+        btRotina = (Button)findViewById(R.id.btnRotina);
     }
-    private void rotina(){
-        btMinhaRotina.setOnClickListener(new View.OnClickListener() {
+    private void imc(){
+        btIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CalculoMassa.class);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btNovaRotina.setOnClickListener(new View.OnClickListener() {
+        btRotina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Não implementado ainda", Toast.LENGTH_SHORT).show();
