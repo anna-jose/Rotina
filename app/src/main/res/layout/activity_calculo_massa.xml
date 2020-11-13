@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalculoMassa">
+
+    <!--TEXTO-->
+    <TextView
+        android:id="@+id/txtCalculando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Calculando meu IMC"
+        android:textColor="#1AA097"
+        android:textSize="24sp"
+        android:layout_gravity="center"/>
+
+    <!--ALTURA-->
+    <TextView
+        android:id="@+id/txtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Altura (em metros)" />
+
+    <EditText
+        android:id="@+id/edtAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Ex: 59,5"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/txtAltura" />
+
+    <!--PESO-->
+    <TextView
+        android:id="@+id/txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso (em quilos)"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/edtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Ex: 1,60"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/txtPeso" />
+
+
+    <!--BOTAO-->
+    <Button
+        android:id="@+id/btnCalcularIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1AA097"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="@id/edtPeso"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/txtResultadoIMC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="imc" />
+
+</LinearLayout>
