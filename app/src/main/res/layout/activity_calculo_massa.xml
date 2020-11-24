@@ -62,19 +62,19 @@
     <!--BOTAO-->
     <Button
         android:id="@+id/btnCalcularIMC"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_shape"
         android:backgroundTint="#1AA097"
         android:text="Calcular"
-        app:layout_constraintBottom_toBottomOf="@id/edtPeso"
-        android:layout_gravity="center"/>
+        app:layout_constraintBottom_toBottomOf="@id/edtPeso" />
 
     <TextView
         android:id="@+id/txtResultadoIMC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_vertical"
-        android:layout_marginTop="20dp"
-        android:text="placeholder" />
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

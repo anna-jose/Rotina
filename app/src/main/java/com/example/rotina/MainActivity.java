@@ -29,15 +29,16 @@ public class MainActivity extends AppCompatActivity {
         btIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalculoMassa.class);
-                startActivity(intent);
+                Intent telaImc = new Intent(MainActivity.this, CalculoMassa.class);
+                startActivity(telaImc);
             }
         });
 
         btRotina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Não implementado ainda", Toast.LENGTH_SHORT).show();
+                Intent telaRotina = new Intent(MainActivity.this, EtapaActivity.class);
+                startActivity(telaRotina);
             }
         });
     }

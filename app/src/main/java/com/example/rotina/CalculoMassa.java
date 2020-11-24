@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 public class CalculoMassa extends AppCompatActivity {
 
+    //............TO DO
+    //IMPLEMENTAR ARMAZENAMENTO LOCAL DA VARIAVEL IMC
+    //IMPLEMENTAR SOLUÇÃO PARA NÃO CALCULAR COM CAMPOS VAZIOS (CRASHA O APP) :(
+
     EditText edAltura, edPeso;
     Button btCalcular;
     TextView txResultado;
