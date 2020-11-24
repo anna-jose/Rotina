@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".CalculoMassa"
-            android:theme="@style/AppTheme">
-        </activity>
-
+        <activity android:name=".InfoActivity"></activity>
+        <activity
+            android:name=".CalculoMassa"
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -23,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/Home">
@@ -33,7 +31,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

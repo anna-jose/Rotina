@@ -35,11 +35,32 @@ public class CalculoMassa extends AppCompatActivity {
                 Double alt = Double.parseDouble(edAltura.getText().toString());
                 Double peso = Double.parseDouble(edPeso.getText().toString());
                 Double imc = peso / (alt*alt);
-                //imc = imc / 0.1;
-                txResultado.setText(imc.toString());
+
+                if (imc < 19){
+                    txResultado.setText(String.format("IMC = %.1f\nVocê está abaixo do peso!" , imc));
+                }else if (imc >=19 && imc <24.9){
+                    txResultado.setText(String.format("IMC = %.1f\nVocê está com o peso normal, bom trabalho!" , imc));
+                }else if (imc >=25 && imc < 29.9){
+                    txResultado.setText(String.format("IMC = %.1f\nVocê está com sobrepeso, tome cuidado!" , imc));
+                }else if (imc >= 30 && imc < 39.9){
+                    txResultado.setText(String.format("IMC = %.2f\nSeu IMC indica Obesidade Tipo 1, tome cuidado!" , imc));
+                }else{
+                    txResultado.setText(String.format("IMC = %.2f\nSeu IMC indica Obesidade Tipo 2, procure ajuda profissional!" , imc));
+                }
+
+                //ao implementar o armazenamento da variável, colocar isso em um método próprio void. tornar imc público
+
+
+
+//                txResultado.setText(String.format("IMC = %.1f" , imc)); //finalmente deu certo essa benção aaaaaaaaaaaaaaaaa
             }
         });
 
+//        Se o IMC estiver abaixo de 19, está Abaixo do Peso.
+//        Entre 19 e 24,9, peso Normal.
+//        Entre 25 e 29,9 é considerado Sobrepeso.
+//        Entre 30 e 39,9, Obesidade Tipo I.
+//        Acima de 40 é Obesidade Mórbida.
 
     }
 
