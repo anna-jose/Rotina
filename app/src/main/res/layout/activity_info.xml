@@ -13,13 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Dados baseados no material em vídeo do ... \n\nClique na imagem para assistir na íntegra!"
+        android:text="Dados baseados no material em vídeo da Profissional de Educação Física Karol Deliberato\n\nClique na imagem para assistir!"
         android:textAlignment="center"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imgVideo"
         android:layout_width="match_parent"
         android:layout_height="213dp"
+        android:src="@drawable/thumbsmall"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 </LinearLayout>

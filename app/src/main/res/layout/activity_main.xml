@@ -27,7 +27,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_shape"
-        android:backgroundTint="#1AA097"
+        android:backgroundTint="@color/darkTeal"
         android:text="Calcular IMC"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -37,8 +37,20 @@
         android:layout_height="44dp"
         android:layout_gravity="center"
         android:background="@drawable/button_shape"
-        android:backgroundTint="#DDE3E9"
+        android:backgroundTint="@color/defaultTeal"
         android:text="Iniciar Rotina"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="#DDE3E9"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="Info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>
