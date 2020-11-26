@@ -40,7 +40,7 @@ public class CalculoMassa extends AppCompatActivity {
             txResultado.setText("IMC = "+valorImc);
             //txResultado.setText("Calcule seu IMC!");
         }else{
-            //valorImc = sharedPreferences.getString("imc","default");
+            //valorImc = sharedPreferences.getString("imc","default");////
             txResultado.setText("Último IMC = "+valorImc);
             //txResultado.setText(String.format("Último IMC = %.1f" , valorImc));   //por algum motivo não funciona com esse formato e vai pra condição anterior
         }
