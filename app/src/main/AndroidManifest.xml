@@ -9,13 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Etapa7Activity"></activity>
-        <activity android:name=".Etapa6Activity" />
-        <activity android:name=".Etapa5Activity" />
-        <activity android:name=".Etapa4Activity" />
-        <activity android:name=".Etapa3Activity" />
-        <activity android:name=".Etapa2Activity" />
-        <activity android:name=".Etapa1Activity" />
         <activity android:name=".EtapaActivity" />
         <activity android:name=".InfoActivity" />
         <activity

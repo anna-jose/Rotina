@@ -7,15 +7,21 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.*;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
+    //  LISTA
+    //Button btE1, btE2, btE3, btE4, btE5, btE6, btE7;
     //  LAYOUT
-    //Button btVoltar, btAvancar;
     TextView txEtapa, txDescricao;
     ImageView imIlustra;
     //  TTS
@@ -29,11 +35,12 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etapa);
-        //contador++; //testar para o TTS iniciar junto com a página
-        leitura = new TextToSpeech(EtapaActivity.this, EtapaActivity.this);
+
         carregaWidgets();
-        carregaEtapa();
+        carregaEtapa(0);
     }
+
+
 
     //WIDGETS OK - confio
     public void carregaWidgets(){
@@ -41,14 +48,12 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
         txEtapa = (TextView)findViewById(R.id.txtEtapa);
         txDescricao = (TextView)findViewById(R.id.txtDescricao);
         imIlustra = (ImageView)findViewById(R.id.imgIlustra);
+
+        leitura = new TextToSpeech(EtapaActivity.this, EtapaActivity.this);
     }
 
-    public void carregaEtapa(){
-
-        if (contador < 0 || contador > 6){ //funcionou ;-;
-            Intent voltar = new Intent(EtapaActivity.this, MainActivity.class);
-            startActivity(voltar);
-        }else if (contador == 0){
+    public void carregaEtapa(int contador){
+        if (contador == 0){
             txEtapa.setText("Etapa 1 - Joelhos");
             imIlustra.setImageResource(R.drawable.joelho);
             txDescricao.setText("Deitado, coloque um calcanhar quase em cima de um joelho.\n\nSegure pelo outro lado do joelho e aguarde.");
@@ -96,33 +101,38 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
             txDescricao.setText("Estique os braços acima da cabeça e entrelace os dedos.");
             timerMsg(10000, txDescricao.getText().toString());
 
+        }else if(contador < 0 || contador > 6){ //funcionou ;-;
+            Intent voltar = new Intent(EtapaActivity.this, MainActivity.class);
+            startActivity(voltar);
         }
     }
 
-    public void timerMsg(int tempo, final String msg1){//, final String msg2){
-        //Toast.makeText(this, "pausou", Toast.LENGTH_SHORT).show();
-        tts(msg1);
-        new CountDownTimer(tempo, 1000) {
+    public void timerMsg(int tempo, final String msg1) {
+        leitura.speak(msg1, TextToSpeech.QUEUE_FLUSH, Bundle.EMPTY, "1");
+
+        CountDownTimer cdt = new CountDownTimer(tempo, 1000) {
             public void onTick(long millisUntilFinished) {
-                if (som == null){
+                if (som == null) {
                     som = MediaPlayer.create(EtapaActivity.this, R.raw.timer);
                 }
                 som.start();
             }
+
             public void onFinish() {
                 contador++;
-                carregaEtapa();
+                carregaEtapa(contador);
             }
         }.start();
     }
 
-    public void tts(String msg){
-        leitura.speak(msg, TextToSpeech.QUEUE_FLUSH,Bundle.EMPTY,"1");
-    }
+//    public void tts(String msg){
+//        leitura.speak(msg, TextToSpeech.QUEUE_FLUSH,Bundle.EMPTY,"1");
+//    }
 
     @Override //OK
     public void onInit(int status) {
         locale = new Locale("pt", "BR");
         leitura.setLanguage(locale);
     }
+
 }
