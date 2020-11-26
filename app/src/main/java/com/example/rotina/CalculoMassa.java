@@ -2,6 +2,8 @@ package com.example.rotina;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,27 +15,36 @@ public class CalculoMassa extends AppCompatActivity {
 
     //............TO DO
     //IMPLEMENTAR ARMAZENAMENTO LOCAL DA VARIAVEL IMC
-    //IMPLEMENTAR SOLUÇÃO PARA NÃO CALCULAR COM CAMPOS VAZIOS (CRASHA O APP) :( == ok
+    //IMPLEMENTAR SOLUÇÃO PARA NÃO CALCULAR COM CAMPOS VAZIOS (CRASHA O APP) :( == okkk
 
     EditText edAltura, edPeso;
-    Button btCalcular;
+    Button btCalcular, btResetar;
     TextView txResultado;
+
+    String valorImc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculo_massa);
-        carregaWidgets();
-        calculoIMC();
-    }
 
-    private void carregaWidgets(){
-        edAltura = (EditText)findViewById(R.id.edtAltura);
-        edPeso = (EditText)findViewById(R.id.edtPeso);
-        btCalcular = (Button)findViewById(R.id.btnCalcularIMC);
-        txResultado = (TextView)findViewById(R.id.txtResultadoIMC);
-    }
-    private void calculoIMC(){
+        final SharedPreferences sharedPreferences;
+        sharedPreferences = getSharedPreferences("imc", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor sharedPref = sharedPreferences.edit();
+
+        carregaWidgets();
+
+        valorImc = sharedPreferences.getString("imc","default");
+
+        if (valorImc == "default"){
+            txResultado.setText("IMC = "+valorImc);
+            //txResultado.setText("Calcule seu IMC!");
+        }else{
+            //valorImc = sharedPreferences.getString("imc","default");////
+            txResultado.setText("Último IMC = "+valorImc);
+            //txResultado.setText(String.format("Último IMC = %.1f" , valorImc));   //por algum motivo não funciona com esse formato e vai pra condição anterior
+        }
+
         btCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +70,27 @@ public class CalculoMassa extends AppCompatActivity {
                     }else{
                         txResultado.setText(String.format("IMC = %.2f\nSeu IMC indica Obesidade Tipo 2, procure ajuda profissional!" , imc));
                     }
-                    //ao implementar o armazenamento da variável, colocar isso em um método próprio void. tornar imc público
+
+                    //double valor = imc;
+                    sharedPref.putString("imc", ""+imc);
+                    sharedPref.commit();
                 }
 //                txResultado.setText(String.format("IMC = %.1f" , imc)); //finalmente deu certo essa benção aaaaaaaaaaaaaaaaa
             }
         });
+
+        btResetar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPref.putString("imc", null);
+                sharedPref.commit();
+                Toast.makeText(CalculoMassa.this, "IMC Resetado!", Toast.LENGTH_SHORT).show();
+
+                valorImc = sharedPreferences.getString("imc","default");
+                txResultado.setText("IMC = "+valorImc);
+            }
+        });
+
 
 //        Se o IMC estiver abaixo de 19, está Abaixo do Peso.
 //        Entre 19 e 24,9, peso Normal.
@@ -72,4 +99,11 @@ public class CalculoMassa extends AppCompatActivity {
 //        Acima de 40 é Obesidade Mórbida.
     }
 
+    private void carregaWidgets(){
+        edAltura = (EditText)findViewById(R.id.edtAltura);
+        edPeso = (EditText)findViewById(R.id.edtPeso);
+        btCalcular = (Button)findViewById(R.id.btnCalcularIMC);
+        btResetar = (Button)findViewById(R.id.btnResetar);
+        txResultado = (TextView)findViewById(R.id.txtResultadoIMC);
+    }
 }
