@@ -40,50 +40,50 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:background="@color/defaultTeal"
         android:gravity="bottom"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/txtDescricao">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+<!--        <Space-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1" />-->
 
-        <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/white"
-            android:text="Voltar" />
+<!--        <Button-->
+<!--            android:id="@+id/btnVoltar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/button_shape"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:text="Voltar" />-->
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+<!--        <Space-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1" />-->
 
-        <Button
-            android:id="@+id/btnAvancar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/white"
-            android:text="Avançar" />
+<!--        <Button-->
+<!--            android:id="@+id/btnAvancar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/button_shape"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:text="Avançar" />-->
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+<!--        <Space-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1" />-->
     </LinearLayout>
 </LinearLayout>
