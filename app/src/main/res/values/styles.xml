@@ -13,6 +13,9 @@
 
     <style name="BG2" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/bg3</item>
+        <item name="colorPrimary">@color/defaultTeal</item>
+        <item name="colorPrimaryDark">@color/darkTeal</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="Home" parent="Theme.AppCompat.Light.DarkActionBar">
