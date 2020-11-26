@@ -22,7 +22,7 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
     //  LISTA
     //Button btE1, btE2, btE3, btE4, btE5, btE6, btE7;
     //  LAYOUT
-    TextView txEtapa, txDescricao;
+    TextView txEtapa, txDescricao, txTimer;
     ImageView imIlustra;
     //  TTS
     public Integer contador = 0; //     gerencia qual etapa será exibida
@@ -50,6 +50,8 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
         imIlustra = (ImageView)findViewById(R.id.imgIlustra);
 
         leitura = new TextToSpeech(EtapaActivity.this, EtapaActivity.this);
+
+        txTimer  = (TextView)findViewById(R.id.txtTimer);
     }
 
     public void carregaEtapa(int contador){
@@ -112,6 +114,7 @@ public class EtapaActivity extends AppCompatActivity implements TextToSpeech.OnI
 
         CountDownTimer cdt = new CountDownTimer(tempo, 1000) {
             public void onTick(long millisUntilFinished) {
+                txTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
                 if (som == null) {
                     som = MediaPlayer.create(EtapaActivity.this, R.raw.timer);
                 }
