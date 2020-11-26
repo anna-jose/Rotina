@@ -4,48 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="fill_vertical"
     android:orientation="vertical"
-    tools:context=".EtapaActivity">
+    android:layout_gravity="center_vertical"
+    tools:context=".Etapa6Activity">
 
     <TextView
-        android:id="@+id/txtEtapa"
+        android:id="@+id/textView13"
+        style="@style/tituloEtapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darkTeal"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"
-        android:text="Título Etapa"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Etapa 6 - Pescoço" />
 
     <ImageView
-        android:id="@+id/imgIlustra"
+        android:id="@+id/imageView6"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_gravity="center_horizontal"
-        tools:layout_editor_absoluteX="0dp"
+        app:srcCompat="@drawable/pescoco"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/txtDescricao"
+        android:id="@+id/txtEtapa6"
+        style="@style/descEtapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Descrição da etapa\n\nDescrição da etapa\n\nDescrição da etapa\n\nDescrição da etapa"
-        android:textAlignment="textStart" />
+        android:text="Relaxe e gire a cabeça em movimentos circulares, cuidadosamente. Tente o sentido horário e antihorário!" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        style="@style/linearhorizontalEtapa"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:background="@color/defaultTeal"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescricao">
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="wrap_content"
@@ -53,15 +41,11 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/btnVoltar"
+            android:id="@+id/btnE6Voltar"
+            style="@style/botaoredondo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_weight="1"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/white"
             android:text="Voltar" />
 
         <Space
@@ -70,15 +54,11 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/btnAvancar"
+            android:id="@+id/btnE6Avanc"
+            style="@style/botaoredondo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_weight="1"
-            android:background="@drawable/button_shape"
-            android:backgroundTint="@color/white"
             android:text="Avançar" />
 
         <Space
