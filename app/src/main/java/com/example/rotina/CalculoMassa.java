@@ -13,7 +13,7 @@ public class CalculoMassa extends AppCompatActivity {
 
     //............TO DO
     //IMPLEMENTAR ARMAZENAMENTO LOCAL DA VARIAVEL IMC
-    //IMPLEMENTAR SOLUÇÃO PARA NÃO CALCULAR COM CAMPOS VAZIOS (CRASHA O APP) :( == ok
+    //IMPLEMENTAR SOLUÇÃO PARA NÃO CALCULAR COM CAMPOS VAZIOS (CRASHA O APP) :( == okkk
 
     EditText edAltura, edPeso;
     Button btCalcular;
